@@ -7,15 +7,15 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:5183',
     screenshot: 'on',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
   },
   webServer: {
     command: 'npm run dev',
-    url: 'http://localhost:5173',
-    reuseExistingServer: !process.env.CI,
+    url: 'http://localhost:5183',
+    reuseExistingServer: false,
     stdout: 'ignore',
     stderr: 'pipe',
   },
